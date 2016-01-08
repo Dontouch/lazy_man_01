@@ -4,6 +4,10 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.service.ECServiceManager;
+import com.example.service.IECManager;
+import com.example.util.Logger;
+
 import android.app.Activity;
 import android.app.Application;
 import android.content.ComponentName;
@@ -15,8 +19,7 @@ import android.os.IBinder;
 
 public class ECApplication extends Application {
 
-	/** 缓存路径 */
-	private static String cacheDir;
+	private static String cacheDir;  //缓存路径
  	
 	private IECManager ecManager;
 	private List<Activity> records = new ArrayList<Activity>();

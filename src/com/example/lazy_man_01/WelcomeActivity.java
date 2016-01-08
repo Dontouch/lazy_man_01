@@ -2,20 +2,26 @@ package com.example.lazy_man_01;
 
 import java.io.File;
 
+import com.example.application.ECApplication;
 import com.example.engine.DownLoadTask;
 import com.example.engine.DownLoadTask.DownlaodListener;
 import com.example.util.Logger;
+import com.example.util.NetUtil;
+import com.example.util.ThreadPoolManager;
 import com.example.vo.Version;
-import com.itheima.redbaby.R;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -73,12 +79,50 @@ public class WelcomeActivity extends Activity implements Runnable,DownlaodListen
 	
 	};
 	
-	
+	private String clientVersion;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.welcome_activity);
+		try {
+			clientVersion = getClientVersion();
+		} catch (NameNotFoundException e) {
+			Logger.e(TAG, e);
+		}
+		((TextView) findViewById(R.id.welcome_version)).setText(clientVersion);
+		ThreadPoolManager.getInstance().addTask(this);
+	}
+
 	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		
+		try {
+			if (NetUtil.hasNetwork(this)) {
+				BaseParser<Version> jsonParser = new VersionParser();
+				RequestVo vo = new RequestVo(R.string.url_version, this, null, jsonParser);
+				version = (Version) NetUtil.get(vo);
+				if (version != null) {
+					String v = version.getVersion();
+
+					Logger.d(TAG, "获取当前服务器版本号为 ：" + v);
+					if (clientVersion.equals(v)) {
+						gotoHome();
+					} else {
+						Message.obtain(handler, SHOW_UPDATE_DIALOG).sendToTarget();
+					}
+				} else {
+					gotoHome();
+				}
+			} else {
+				gotoHome();
+			}
+		} catch (Exception e) {
+			Logger.e(TAG, e);
+			gotoHome();
+		}
 	}
 
     /**
@@ -131,6 +175,30 @@ public class WelcomeActivity extends Activity implements Runnable,DownlaodListen
 		mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 		mProgressDialog.setMessage(getString(R.string.downning));
 		mProgressDialog.show();
+	}
+	
+	/**
+	 * 获取当前应用的版本号
+	 * 
+	 * @return
+	 * @throws NameNotFoundException
+	 */
+	private String getClientVersion() throws NameNotFoundException {
+		PackageManager packageManager = getPackageManager();
+		PackageInfo packageInfo = packageManager.getPackageInfo(getPackageName(), 0);
+		return packageInfo.versionName;
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		if (downLoadTask != null)
+			downLoadTask.cancel();
+		downLoadTask = null;
+		if (mProgressDialog != null)
+			mProgressDialog.dismiss();
+		mProgressDialog = null;
+		file = null;
 	}
 
 }

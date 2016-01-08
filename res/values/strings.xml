@@ -7,5 +7,6 @@
     
     <!-- WelcomeActivity -->
     <string name="down_error">下载失败</string>
+    <string name="downning">正在下载</string>
 
 </resources>

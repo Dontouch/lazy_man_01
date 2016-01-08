@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- welcome_activity -->
+    <item name="relWelcomeImg" type="id">false</item>
+
+</resources>

@@ -6,7 +6,7 @@ import com.example.vo.ServiceHistory;
 
 public interface IECManager {
 	
-	 void addProductToHistory(ServiceHistory history);
-	 void clearProductHistory();
-	 List<ServiceHistory> getAllProductHistory();
+	 void addServiceToHistory(ServiceHistory history);
+	 void clearServiceHistory();
+	 List<ServiceHistory> getAllServiceHistory();
 }

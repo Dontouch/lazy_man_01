@@ -28,7 +28,7 @@
     <style name="style_20_A2282F_BOLD">
         <item name="android:textSize">20.0sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">#ffa2282f</item>
+        <item name="android:textColor">#87CEEB</item>
     </style>
 
     <style name="style_13_FFFFFF_BOLD">

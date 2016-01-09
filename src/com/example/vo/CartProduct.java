@@ -18,11 +18,9 @@ public class CartProduct {
 	/** 服务图片URL */
 	public String pic;
 	
-	/** 服务时间 */
+	/** 日期 */
 	public String time;
-	
-	/** 日期  */
-	public String date;
+
 
 	/** 服务数量，0为缺货或下架 */
 	public int number;
@@ -40,7 +38,7 @@ public class CartProduct {
 	public CartProduct() {
 	}
 
-	public CartProduct(int id, String name, double price, String pic, String time, String date, int number,
+	public CartProduct(int id, String name, double price, String pic, String time, int number,
 			int uplimit, double checkout_service ,double checkout_app) {
 		super();
 		this.id = id;
@@ -48,7 +46,6 @@ public class CartProduct {
 		this.price = price;
 		this.pic = pic;
 		this.time = time;
-		this.date = date;
 		this.number = number;
 		this.uplimit = uplimit;
 		this.checkout_service = checkout_service;
@@ -93,14 +90,6 @@ public class CartProduct {
 
 	public void settime(String time) {
 		this.time = time;
-	}
-
-	public String date() {
-		return date;
-	}
-
-	public void setSubtotal(String date) {
-		this.date = date;
 	}
 
 	public int getNumber() {

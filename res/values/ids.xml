@@ -4,4 +4,16 @@
     <!-- welcome_activity -->
     <item name="relWelcomeImg" type="id">false</item>
 
+    <!-- Frame -->
+    <item name="imgHome" type="id">false</item>
+    <item name="imgClassify" type="id">false</item>
+    <item name="imgSearch" type="id">false</item>
+    <item name="imgShoppingCar" type="id">false</item>
+    <item name="imgMore" type="id">false</item>
+    <item name="textShopCarNum" type="id">false</item>
+    
+    <!-- home_activity -->
+    <item name="relSearch" type="id">false</item>
+    <item name="relTop" type="id">false</item>
+
 </resources>

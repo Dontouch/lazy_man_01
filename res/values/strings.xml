@@ -4,14 +4,49 @@
     <string name="app_name">lazy_man_01</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    
+
     <!-- WelcomeActivity -->
     <string name="down_error">下载失败</string>
     <string name="downning">正在下载</string>
-    <string name="url_version">version</string>
-    
+   
+
     <!-- NetUtil -->
     <string name="app_host">http://192.168.1.100:8080/ECServer_D/</string>
     <string name="net_error">当前网络不可用，请先连接Internet！</string>
+
+    <!-- custom-title -->
+    <string name="custom_title_back">返回</string>
+
+    <!-- menu_item -->
+    <string name="menu_home">主页</string>
+    <string name="menu_search">搜索</string>
+    <string name="menu_favorites">收藏夹</string>
+    <string name="menu_myorder">我的订单</string>
+    <string name="menu_history">浏览历史</string>
+    <string name="menu_exit">退出</string>
+
+    <!-- BaseWapperActivity -->
+    <string name="loadTitle"><strong>正在更新数据</strong></string>
+    <string name="LoadContent"><strong>请稍候……</strong></string>
+    
+    <!-- home_activity -->
+    <string name="please_input_service_name">请输入您要搜索的服务</string>
+    
+    
+    <!-- url -->
+    <string name="url_addresslist">addresslist</string>
+    <string name="url_home">home</string>
+    <string name="url_addresssave">addresssave</string>
+    <string name="url_addressdelete">addressdelete</string>
+    <string name="url_addressdefault">addressdefault</string>
+    <string name="url_limitbuy">limitbuy</string>
+    <string name="url_version">version</string>
+    <string name="url_newproduct">newproduct</string>
+    <string name="url_hotproduct">hotproduct</string>
+    <string name="url_brand">brand</string>
+
+    <string name="url_logout">logout</string>
+    <string name="url_cartdatasession">cartdatasession</string>
+    <string name="url_productcollect">product/collect</string>
 
 </resources>

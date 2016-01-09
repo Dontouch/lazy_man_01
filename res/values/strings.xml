@@ -74,5 +74,6 @@
     <string name="url_logout">logout</string>
     <string name="url_cartdatasession">cartdatasession</string>
     <string name="url_productcollect">product/collect</string>
+    <string name="cart">cart</string>
 
 </resources>

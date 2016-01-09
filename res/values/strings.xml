@@ -8,7 +8,6 @@
     <!-- WelcomeActivity -->
     <string name="down_error">下载失败</string>
     <string name="downning">正在下载</string>
-   
 
     <!-- NetUtil -->
     <string name="app_host">http://192.168.1.100:8080/ECServer_D/</string>
@@ -28,11 +27,20 @@
     <!-- BaseWapperActivity -->
     <string name="loadTitle"><strong>正在更新数据</strong></string>
     <string name="LoadContent"><strong>请稍候……</strong></string>
-    
+
     <!-- home_activity -->
     <string name="please_input_service_name">请输入您要搜索的服务</string>
-    
-    
+
+    <!-- more_activity -->
+    <string name="my_account_title">我的账户</string>
+    <string name="my_ordr_title">我的订单</string>
+    <string name="address_manage_title">地址管理</string>
+    <string name="my_favorite_title">收藏夹</string>
+    <string name="recent_browse_title">最近浏览</string>
+    <string name="help_title">帮助中心</string>
+    <string name="about_title">关 于</string>
+    <string name="more">更多</string>
+
     <!-- url -->
     <string name="url_addresslist">addresslist</string>
     <string name="url_home">home</string>
@@ -44,7 +52,6 @@
     <string name="url_newproduct">newproduct</string>
     <string name="url_hotproduct">hotproduct</string>
     <string name="url_brand">brand</string>
-
     <string name="url_logout">logout</string>
     <string name="url_cartdatasession">cartdatasession</string>
     <string name="url_productcollect">product/collect</string>

@@ -15,5 +15,9 @@
     <!-- home_activity -->
     <item name="relSearch" type="id">false</item>
     <item name="relTop" type="id">false</item>
-
+    
+    <!-- about_activity -->
+    <item name="imgLogo" type="id">false</item>
+    <item name="fraHead" type="id">false</item>
+    <item name="textVersion" type="id">false</item>
 </resources>

@@ -45,21 +45,32 @@
     <string name="login_name">用户名：</string>
     <string name="login_pwd">密码：</string>
     <string name="userinfo">userinfo</string>
-    
+
     <!-- aaddress -->
     <string name="address_select_province">选择省份</string>
     <string name="address_select_area">选择地区</string>
-	<string name="address_select_city">选择城市</string>
-	<string name="add_succuess">添加成功!</string>
-	<string name="edit_success">修改成功</string>
-	<string name="toast">提示</string>
-	<string name="yes">是</string>
-	<string name="no">否</string>
-	<string name="delete_success">删除成功</string>
-	<string name="address_manager_add">新增地址</string>
-	<string name="address_manage">地址管理</string>
-	<string name="set_success">设置成功</string>
+    <string name="address_select_city">选择城市</string>
+    <string name="add_succuess">添加成功!</string>
+    <string name="edit_success">修改成功</string>
+    <string name="toast">提示</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="delete_success">删除成功</string>
+    <string name="address_manager_add">新增地址</string>
+    <string name="address_manage">地址管理</string>
+    <string name="set_success">设置成功</string>
 
+    <!-- limit buy -->
+    <string name="topic">topic</string>
+
+    <!-- category -->
+    <string name="no_information">加载中...</string>
+    <string name="category_view">分类浏览</string>
+    <string name="category">category</string>
+
+    <!-- help -->
+    <string name="help">help</string>
+    
     <!-- url -->
     <string name="url_addresslist">addresslist</string>
     <string name="url_home">home</string>

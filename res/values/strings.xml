@@ -58,6 +58,7 @@
 	<string name="delete_success">删除成功</string>
 	<string name="address_manager_add">新增地址</string>
 	<string name="address_manage">地址管理</string>
+	<string name="set_success">设置成功</string>
 
     <!-- url -->
     <string name="url_addresslist">addresslist</string>

@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.example.adapter.AddressManageAdapter;
 import com.example.adapter.AddressManageAdapter.OnItemButtonListener;
+import com.example.parser.AddressManageParser;
 import com.example.parser.SuccessParser;
 import com.example.util.NetUtil;
 import com.example.vo.AddressDetail;

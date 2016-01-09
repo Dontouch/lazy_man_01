@@ -20,4 +20,8 @@
     <item name="imgLogo" type="id">false</item>
     <item name="fraHead" type="id">false</item>
     <item name="textVersion" type="id">false</item>
+    
+    <!-- company -->
+    <item name="textParent" type="id">false</item>
+    <item name="nineGv" type="id">false</item>
 </resources>

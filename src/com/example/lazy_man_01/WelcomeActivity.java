@@ -5,9 +5,12 @@ import java.io.File;
 import com.example.application.ECApplication;
 import com.example.engine.DownLoadTask;
 import com.example.engine.DownLoadTask.DownlaodListener;
+import com.example.parser.BaseParser;
+import com.example.parser.VersionParser;
 import com.example.util.Logger;
 import com.example.util.NetUtil;
 import com.example.util.ThreadPoolManager;
+import com.example.vo.RequestVo;
 import com.example.vo.Version;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -18,6 +21,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -131,13 +135,23 @@ public class WelcomeActivity extends Activity implements Runnable,DownlaodListen
 	@Override
 	public void update(int total, int len, int threadid) {
 		// TODO Auto-generated method stub
-		
+		if (flag) {
+			mProgressDialog.setMax(total);
+			flag = false;
+		}
+		progressVaue += len;
+		mProgressDialog.setProgress(progressVaue);
 	}
 
 	@Override
 	public void downLoadFinish(int totalSucess) {
 		// TODO Auto-generated method stub
-		
+		mProgressDialog.dismiss();
+		if (totalSucess == 5)
+			installApk();
+		else {
+			Message.obtain(handler, DOWN_ERROR).sendToTarget();
+		}
 	}
 
 	@Override
@@ -165,6 +179,15 @@ public class WelcomeActivity extends Activity implements Runnable,DownlaodListen
 
 	}
 	
+	/**
+	 * 安装Apk
+	 */
+	private void installApk() {
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+		startActivity(intent);
+		finish();
+	}
 
 	/**
 	 * 初始化进度条
